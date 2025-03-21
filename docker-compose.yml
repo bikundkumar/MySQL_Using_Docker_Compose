@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: bikund2017
+      MYSQL_DATABASE: codeDB
+      MYSQL_USER: code
+      MYSQL_PASSWORD: code2017
+    ports:
+    - 3306:3306
+    volumes:
+    - mysql_data:/var/lib/mysql
+    networks:
+      - mysql_network
+
+volumes:
+      mysql_data:
+
+networks:
+      mysql_network:
